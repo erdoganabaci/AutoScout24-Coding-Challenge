@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const morgan = require('morgan')
 
+const port = 3696
 // import report functions
 const { calculateAvaragePerSellerType } = require('./reports/averageListingSelling')
 const { calculatePercentageByMake } = require('./reports/percentualDistribution')
@@ -115,11 +116,11 @@ app.post('/', (req, res, next) => {
         if (err) {
             return res.send('Error when uploading files')
         }
-        res.redirect('/');
+        res.redirect('/')
 
     })
 
 })
 
 // Server
-app.listen(3696, () => console.log('Server started on port 3696'))
+app.listen(process.env.PORT || port, () => console.log(`Server started on port ${port}`))
