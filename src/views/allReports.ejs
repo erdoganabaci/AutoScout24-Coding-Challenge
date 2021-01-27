@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-5"><strong>AutoScout24 Code Challenge</strong> </h2>
+        <table class="table table-bordered table-striped text-center">
+            <p class="text-center mb-2"><b>Average Listing Selling Price Report</b> </p>
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+
+                    <th>Seller Type </th>
+                    <th>Average in Euro</th>
+
+                </tr>
+            </thead>
+            <% for(var i=0; i < reportAvarage.length; i++) { %>
+
+
+            <tbody>
+
+                <tr>
+                    <th scope="row"><%-i%></th>
+                    <td><%- reportAvarage[i].sellerType %></td>
+                    <td><%- reportAvarage[i].avarageInEuro %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+
+        <table class="table table-bordered table-striped text-center">
+            <p class="text-center mb-2"><b>Percentual Distribution of Available Cars</b> </p>
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+
+                    <th>Make</th>
+                    <th>Distribution</th>
+
+                </tr>
+            </thead>
+            <% for(var i=0; i < reportPercentual.length; i++) { %>
+
+
+            <tbody>
+
+                <tr>
+                    <th scope="row"><%-i%></th>
+                    <td><%- reportPercentual[i].make %></td>
+                    <td><%- reportPercentual[i].percentage %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-striped text-center">
+            <p class="text-center mb-2"><b>Average Price of The 30% Most Contacted Listings</b> </p>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th>Average price</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><%-0%></th>
+                    <td><%- reportMostContactedListings.avaragePrice %></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+        <table class="table table-bordered table-striped text-center">
+            <p class="text-center mb-2"><b>01.2020</b> </p>
+
+            <thead>
+                <tr>
+
+                    <th>Ranking</th>
+                    <th>Listing Id</th>
+                    <th>Make</th>
+                    <th>Selling Price</th>
+                    <th>Mileage</th>
+                    <th>Total Amount of contacts</th>
+
+
+                </tr>
+            </thead>
+            <% for(var i=0; i < reportMostContactedPerMonthFirst.length; i++) { %>
+
+
+            <tbody>
+
+                <tr>
+                    <td><%-i+1%></td>
+                    <td><%- reportMostContactedPerMonthFirst[i].listing_id %></td>
+                    <td><%- reportMostContactedPerMonthFirst[i].make %></td>
+                    <td><%- reportMostContactedPerMonthFirst[i].price %></td>
+                    <td><%- reportMostContactedPerMonthFirst[i].mileage %></td>
+                    <td><%- reportMostContactedPerMonthFirst[i].timesContacted %></td>
+
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-striped text-center">
+            <p class="text-center mb-2"><b>02.2020</b> </p>
+
+            <thead>
+                <tr>
+
+                    <th>Ranking</th>
+                    <th>Listing Id</th>
+                    <th>Make</th>
+                    <th>Selling Price</th>
+                    <th>Mileage</th>
+                    <th>Total Amount of contacts</th>
+
+
+                </tr>
+            </thead>
+            <% for(var i=0; i < reportMostContactedPerMonthSecond.length; i++) { %>
+
+
+            <tbody>
+
+                <tr>
+                    <td><%-i+1%></td>
+                    <td><%- reportMostContactedPerMonthSecond[i].listing_id %></td>
+                    <td><%- reportMostContactedPerMonthSecond[i].make %></td>
+                    <td><%- reportMostContactedPerMonthSecond[i].price %></td>
+                    <td><%- reportMostContactedPerMonthSecond[i].mileage %></td>
+                    <td><%- reportMostContactedPerMonthSecond[i].timesContacted %></td>
+
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <a href="/uploads" class="btn btn-outline-secondary" role="button">Upload CSV</a>
+
+    </div>
+
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2021 Copyright:
+            <a class="text-dark" href="https://github.com/erdoganabaci">Created By Erdogan</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
