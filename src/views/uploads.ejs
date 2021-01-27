@@ -11,16 +11,20 @@
 </head>
 
 <body>
-  <div class="jumbotron d-flex align-items-center">
-    <div class="container mt-5">
-      <form action="/" enctype="multipart/form-data" method="post">
-        <div class="form-group">
-          <input type="file" name="data" multiple>
-        </div>
+
+  <form class="col-lg-6 offset-lg-3 " action="/" enctype="multipart/form-data" method="post">
+    <div class="row justify-content-center">
+
+      <input type="file" name="data" multiple>
+      <span class="input-group-btn">
+
         <input type="submit" class="btn btn-primary" value="Upload">
-      </form>
+      </span>
+
     </div>
-  </div>
+
+  </form>
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
